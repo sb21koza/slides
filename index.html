@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Инвестиции</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="center">
+					<h1>Инвестиции</h1>
+				</section>
+				<section class="center">
+					<h2>Определения:</h2>
+				</section>
+				<section data-markdown="markdown/invest.md"></section>
+				<section data-markdown="markdown/trading.md"></section>
+				<section data-markdown="markdown/market.md"></section>
+				<section data-markdown="markdown/exchange.md"></section>
+				<section data-markdown="markdown/broker.md"></section>
+				<section data-markdown="markdown/securite_paper.md"></section>
+				<section data-markdown="markdown/types.md"></section>
+				<section data-markdown="markdown/investment_portfolio.md"></section>
+				<section data-markdown="markdown/diversification.md"></section>
+				<section data-markdown="markdown/spread.md"></section>
+				<section data-markdown="markdown/bull_and_bear.md"></section>
+				<section data-markdown="markdown/bull.md"></section>
+				<section data-markdown="markdown/bear.md"></section>
+				<section data-markdown="markdown/flat.md"></section>
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							### Пример квадратной матрицы
+
+							$$ A= \begin{pmatrix}
+							a_{11} & a_{12} & a_{13} \\ 
+							a_{21} &  a_{22} & a_{23} \\ 
+							a_{31} &  a_{32} & a_{33}
+							\end{pmatrix}$$
+						</script>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Доходность по методу Дитца
+							$$ W_t=\dfrac{T-t}{T} $$
+							$$ R=\dfrac{S_e-S_b-\sum S_a+\sum(S_w)}{S_b-\sum (S_aW_t) - \sum (S_wW_t)} $$
+						</script>
+					</section>
+				</section>
+				<section class="center">
+					<h2>Графики</h2>
+				</section>
+				<section>
+					<section data-markdown="markdown/line_chart.md"></section>
+					<section data-markdown="markdown/candiestick.md"></section>
+					<section data-fullscreen data-menu-title="Свечной график">
+						<iframe data-src="html/candlestick.html" class="stretch"></iframe>
+					</section>
+				</section>
+				<!-- Обычная картинка -->
+				<section>
+					<h2>Юмор</h2>
+					<img src="html/img/umor2.jpg" height="400px" data-menu-title="Футурама">
+				</section>
+				<!-- Вертикальная картинка -->
+				<section data-background-image="html/img/umor3.jpg" data-background-size="contain" data-menu-title="Винни-Пух">
+				</section>
+				<!-- Картинка высокого качества -->
+				<section data-background-image="html/img/umor1.jpg" data-menu-title="Оскар">
+				</section>
+				<section class="center" data-menu-title="Заключение">
+					Спасибо за внимание!
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: false,
+				center: true,
+				slideNumber: true,
+				consols: true,
+				dependencies: [
+					{
+						src:'plugin/menu/menu.js'
+					},
+					{
+						src:'plugin/fullscreen.js'
+					},
+					{
+						src:'plugin/katex/katex.js',
+						async: true,
+					},
+				],
+				menu:{
+					numbers: true,
+					markers: true,
+				},
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

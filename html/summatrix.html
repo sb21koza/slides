@@ -1,0 +1,9 @@
+function addMatrices(matrixA, matrixB) {
+    if (matrixA.length !== matrixB.length || matrixA[0].length !== matrixB[0].length) {
+        throw new Error("Матрицы должны быть одного размера");
+    }
+
+    return matrixA.map((row, rowIndex) => 
+        row.map((value, colIndex) => value + matrixB[rowIndex][colIndex])
+    );
+}
