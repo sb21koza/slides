@@ -87,9 +87,6 @@
 				<section data-background-image="html/img/umor1.jpg" data-menu-title="Оскар">
 				</section>
 			    -->
-				<section class="center" data-menu-title="Заключение">
-					Спасибо за внимание!
-				</section>
 
 				<section>
 					
@@ -101,9 +98,23 @@
 				</section>
 
 				<script>
+					
+			function parseMatrix(matrixString) {
+						const matrix = [];
+						for (const row of matrixString.split("\n")) {
+						const columns = row.split(",").map((i) => +i);
+						matrix.push(columns);
+						}
+						return matrix;
+					}
 					function addMatrices() {
-						let matrixA = document.querySelector('#input1').value;
-						let matrixB = document.querySelector('#input2').value;
+						const matrixA = parseMatrix(document.querySelector('#input1').value);
+						const matrixB = parseMatrix(document.querySelector('#input2').value);
+
+						console.log('matrixA', matrixA);
+						console.log('matrixB', matrixB);
+						//let matrixA = document.querySelector('#input1').value;
+						//let matrixB = document.querySelector('#input2').value;
 						// Проверяем, что матрицы имеют одинаковые размеры
 						if (matrixA.length !== matrixB.length || matrixA[0].length !== matrixB[0].length) {
 							throw new Error("Матрицы должны иметь одинаковые размеры для сложения.");
@@ -120,7 +131,7 @@
 							// Проходим по столбцам матрицы
 							for (let j = 0; j < matrixA[i].length; j++) {
 								// Складываем соответствующие элементы матриц
-								row.push(Number(matrixA[i][j]) + Number(matrixB[i][j]));
+								row.push((matrixA[i][j]) + (matrixB[i][j]));
 							}
 
 							// Добавляем строку в результирующую матрицу
@@ -128,11 +139,11 @@
 
 							
 						}
-						console.log('matrixA',matrixA);
+						console.log('matrixA', matrixA);
 						console.log('matrixB', matrixB);
 						// document.querySelector('#result1').innerHTML = katex.renderToString('x^3');
-						console.log(Number(matrixA[0][0]) + Number(matrixB[0][0]));
-						document.querySelector('#result1').innerHTML = katex.renderToString(''+(Number(matrixA[0][0]) + Number(matrixB[0][0])));
+						console.log((matrixA[0][0]) + (matrixB[0][0]));
+						document.querySelector('#result1').innerHTML = katex.renderToString(''+((matrixA[0][0]) + (matrixB[0][0])));
 						displayArray(result);
 					}
 
@@ -140,9 +151,8 @@
 					function displayArray(arr) {
 						let resultDiv = document.getElementById('#result1');
 						resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
-						//document.querySelector('#result1').innerHTML = katex.renderToString(result);
+						document.querySelector('#result1').innerHTML = katex.renderToString(result);
 					}
-
 					
 
 					window.onload = () => {
@@ -150,9 +160,25 @@
 
 					}
 				</script>
+				</script>
 				<section>
 					<h2>Исходный код</h2>
 					<img src="pic1.png" height="600px" data-menu-title="Исходный код">
+				</section>
+				<section>
+					<h2>Мем 1</h2>
+					<img src="dist\img1.jpg" height="600px" data-menu-title="Мем1">
+				</section>
+				<section>
+					<h2>Мем 2</h2>
+					<img src="dist\img2.jpeg" height="600px" data-menu-title="Мем2">
+				</section>
+				<section>
+					<h2>Мем 3</h2>
+					<img src="dist\img3.jpg" height="600px" data-menu-title="Мем3">
+				</section>
+				<section class="center" data-menu-title="Заключение">
+					Спасибо за внимание!
 				</section>
 			</div>
 		</div>
