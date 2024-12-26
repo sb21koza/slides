@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Инвестиции</title>
+		<title>АЛГЕБРА</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -12,42 +12,56 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section class="center">
-					<h1>Инвестиции</h1>
+					<h1>Матрицы</h1>
 				</section>
-				<section class="center">
-					<h2>Определения:</h2>
+				<section data-markdown="markdown/matrix.md"></section>
+                <section class="center">
+					<h2>Виды матриц:</h2>
 				</section>
-				<section data-markdown="markdown/invest.md"></section>
-				<section data-markdown="markdown/trading.md"></section>
-				<section data-markdown="markdown/market.md"></section>
-				<section data-markdown="markdown/exchange.md"></section>
-				<section data-markdown="markdown/broker.md"></section>
-				<section data-markdown="markdown/securite_paper.md"></section>
-				<section data-markdown="markdown/types.md"></section>
-				<section data-markdown="markdown/investment_portfolio.md"></section>
-				<section data-markdown="markdown/diversification.md"></section>
-				<section data-markdown="markdown/spread.md"></section>
-				<section data-markdown="markdown/bull_and_bear.md"></section>
-				<section data-markdown="markdown/bull.md"></section>
-				<section data-markdown="markdown/bear.md"></section>
-				<section data-markdown="markdown/flat.md"></section>
+				<section data-markdown="markdown/squared.md"></section>
+				<section data-markdown="markdown/squared1.md"></section>
+				<section data-markdown="markdown/zero.md"></section>
+				<section data-markdown="markdown/zero1.md"></section>
+				<section data-markdown="markdown/vector.md"></section>
+				<section data-markdown="markdown/vector1.md"></section>
+				<section data-markdown="markdown/vectors.md"></section>
+				<section data-markdown="markdown/vectors1.md"></section>
+				<section data-markdown="markdown/diagonal.md"></section>
+				<section data-markdown="markdown/diagonal1.md"></section>
+				<section data-markdown="markdown/edinica.md"></section>
+				<section data-markdown="markdown/edinica1.md"></section>
+				<section data-markdown="markdown/verx.md"></section>
+				<section data-markdown="markdown/verx1.md"></section>
+				<section data-markdown="markdown/niz.md"></section>
+				<section data-markdown="markdown/niz1.md"></section>
+				<section data-markdown="markdown/summ.md"></section>
+				<section data-markdown="markdown/summ1.md"></section>
+				<section data-markdown="markdown/summ2.md"></section>
+				<section data-markdown="markdown/umn.md"></section>
+				<section data-markdown="markdown/umn1.md" style="font-size: 40%"></section>
+				<section data-markdown="markdown/umn2.md"></section>
+				<section data-markdown="markdown/determinant.md"></section>
+				<section data-markdown="markdown/determinant1.md"></section>
+				<!--
 				<section>
 					<section data-markdown>
 						<script type="text/template">
 							### Пример квадратной матрицы
 
 							$$ A= \begin{pmatrix}
-							a_{11} & a_{12} & a_{13} \\ 
-							a_{21} &  a_{22} & a_{23} \\ 
-							a_{31} &  a_{32} & a_{33}
-							\end{pmatrix}$$
+							 a_{11} & a_{12} & a_{13}\\
+							 a_{21} &  a_{22} & a_{23}\\
+							 a_{31} &  a_{32} & a_{33}
+							\end{pmatrix} $$
 						</script>
-					</section>
+					</section>					
 					<section data-markdown>
 						<script type="text/template">
 							### Доходность по методу Дитца
@@ -55,33 +69,136 @@
 							$$ R=\dfrac{S_e-S_b-\sum S_a+\sum(S_w)}{S_b-\sum (S_aW_t) - \sum (S_wW_t)} $$
 						</script>
 					</section>
-				</section>
-				<section class="center">
-					<h2>Графики</h2>
-				</section>
-				<section>
-					<section data-markdown="markdown/line_chart.md"></section>
-					<section data-markdown="markdown/candiestick.md"></section>
-					<section data-fullscreen data-menu-title="Свечной график">
-						<iframe data-src="html/candlestick.html" class="stretch"></iframe>
-					</section>
-				</section>
+				</section> -->
+				
 				<!-- Обычная картинка -->
+				<!--
 				<section>
 					<h2>Юмор</h2>
 					<img src="html/img/umor2.jpg" height="400px" data-menu-title="Футурама">
-				</section>
+				</section>-->
 				<!-- Вертикальная картинка -->
+				<!--
 				<section data-background-image="html/img/umor3.jpg" data-background-size="contain" data-menu-title="Винни-Пух">
 				</section>
+				-->
 				<!-- Картинка высокого качества -->
+				<!--
 				<section data-background-image="html/img/umor1.jpg" data-menu-title="Оскар">
+				</section>
+			    -->
+
+				<section>
+					
+					<textarea id="input1" cols="10" rows="10"></textarea>
+					<textarea id="input2" cols="10" rows="10"></textarea>
+					<p><button id="calc1">Вычислить</button></p>
+					<div id="result1" style="margin-top: 10px;"></div>
+					<!-- document.querySelector('#result1').innerHTML = katex.renderToString('x^2') -->
+				</section>
+
+				<script>
+					
+			function parseMatrix(matrixString) {
+						const matrix = [];
+						for (const row of matrixString.split("\n")) {
+						const columns = row.split(",").map((i) => +i);
+						matrix.push(columns);
+						}
+						return matrix;
+					}
+					function addMatrices() {
+						const matrixA = parseMatrix(document.querySelector('#input1').value);
+						const matrixB = parseMatrix(document.querySelector('#input2').value);
+
+						console.log('matrixA', matrixA);
+						console.log('matrixB', matrixB);
+						//let matrixA = document.querySelector('#input1').value;
+						//let matrixB = document.querySelector('#input2').value;
+						// Проверяем, что матрицы имеют одинаковые размеры
+						if (matrixA.length !== matrixB.length || matrixA[0].length !== matrixB[0].length) {
+							throw new Error("Матрицы должны иметь одинаковые размеры для сложения.");
+						}
+
+						// Создаем результирующую матрицу
+						let result = [];
+
+						// Проходим по строкам матрицы
+						for (let i = 0; i < matrixA.length; i++) {
+							// Создаем строку для результирующей матрицы
+							let row = [];
+
+							// Проходим по столбцам матрицы
+							for (let j = 0; j < matrixA[i].length; j++) {
+								// Складываем соответствующие элементы матриц
+								row.push((matrixA[i][j]) + (matrixB[i][j]));
+							}
+
+							// Добавляем строку в результирующую матрицу
+							result.push(row);
+
+							
+						}
+						console.log('matrixA', matrixA);
+						console.log('matrixB', matrixB);
+						// document.querySelector('#result1').innerHTML = katex.renderToString('x^3');
+						console.log((matrixA[0][0]) + (matrixB[0][0]));
+						document.querySelector('#result1').innerHTML = katex.renderToString(''+((matrixA[0][0]) + (matrixB[0][0])));
+						displayArray(result);
+					}
+
+					// Функция для отображения текущего состояния массива
+					function displayArray(arr) {
+						let resultDiv = document.getElementById('#result1');
+						resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
+						document.querySelector('#result1').innerHTML = katex.renderToString(result);
+					}
+					
+
+					window.onload = () => {
+						document.querySelector('#calc1').onclick = addMatrices;
+
+					}
+				</script>
+				</script>
+				<section>
+					<h2>Исходный код</h2>
+					<img src="pic1.png" height="600px" data-menu-title="Исходный код">
+				</section>
+				<section>
+					<h2>Мем 1</h2>
+					<img src="dist\img1.jpg" height="600px" data-menu-title="Мем1">
+				</section>
+				<section>
+					<h2>Мем 2</h2>
+					<img src="dist\img2.jpeg" height="600px" data-menu-title="Мем2">
+				</section>
+				<section>
+					<h2>Мем 3</h2>
+					<img src="dist\img3.jpg" height="600px" data-menu-title="Мем3">
 				</section>
 				<section class="center" data-menu-title="Заключение">
 					Спасибо за внимание!
 				</section>
 			</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
@@ -92,7 +209,7 @@
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
-				hash: false,
+				hash: true,
 				center: true,
 				slideNumber: true,
 				consols: true,
