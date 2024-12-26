@@ -92,34 +92,37 @@
 					
 					<textarea id="input1" cols="10" rows="10"></textarea>
 					<textarea id="input2" cols="10" rows="10"></textarea>
-					<p><button id="calc1">Вычислить</button></p>
+					<p><button id="calc1">Сложить</button></p>
 					<div id="result1" style="margin-top: 10px;"></div>
 					<!-- document.querySelector('#result1').innerHTML = katex.renderToString('x^2') -->
 				</section>
 
 				<script>
 					
-			function parseMatrix(matrixString) {
-						const matrix = [];
-						for (const row of matrixString.split("\n")) {
-						const columns = row.split(",").map((i) => +i);
-						matrix.push(columns);
-						}
-						return matrix;
+					// получение матрицы из поля ввода
+					function parseMatrix(matrixString) {
+								const matrix = [];
+								for (const row of matrixString.split("\n")) {
+								const columns = row.split(",").map((i) => +i);
+								matrix.push(columns);
+								}
+								return matrix;
 					}
+
+					// сложение матриц
 					function addMatrices() {
 						const matrixA = parseMatrix(document.querySelector('#input1').value);
 						const matrixB = parseMatrix(document.querySelector('#input2').value);
 
-						console.log('matrixA', matrixA);
-						console.log('matrixB', matrixB);
+						//console.log('matrixA', matrixA);
+						//console.log('matrixB', matrixB);
 						//let matrixA = document.querySelector('#input1').value;
 						//let matrixB = document.querySelector('#input2').value;
 						// Проверяем, что матрицы имеют одинаковые размеры
 						if (matrixA.length !== matrixB.length || matrixA[0].length !== matrixB[0].length) {
 							throw new Error("Матрицы должны иметь одинаковые размеры для сложения.");
 						}
-
+/*
 						// Создаем результирующую матрицу
 						let result = [];
 
@@ -136,29 +139,115 @@
 
 							// Добавляем строку в результирующую матрицу
 							result.push(row);
-
-							
 						}
-						console.log('matrixA', matrixA);
-						console.log('matrixB', matrixB);
+						*/
+						//console.log('matrixA', matrixA);
+						//console.log('matrixB', matrixB);
 						// document.querySelector('#result1').innerHTML = katex.renderToString('x^3');
-						console.log((matrixA[0][0]) + (matrixB[0][0]));
-						document.querySelector('#result1').innerHTML = katex.renderToString(''+((matrixA[0][0]) + (matrixB[0][0])));
-						displayArray(result);
+						//console.log((matrixA[0][0]) + (matrixB[0][0]));
+
+						document.querySelector('#result1').innerHTML = '';
+						for (let i = 0; i < matrixA.length; i++) {
+							// Проходим по столбцам матрицы
+							for (let j = 0; j < matrixA[i].length; j++) {
+								document.querySelector('#result1').innerHTML += katex.renderToString(''+((matrixA[i][j]) + (matrixB[i][j])) + ',');
+							}
+
+							document.querySelector('#result1').innerHTML += '<br>';
+						}
+						//document.querySelector('#result1').innerHTML = katex.renderToString(''+(matrixA + matrixB[0][0]));
+						//displayArray(result);
 					}
 
 					// Функция для отображения текущего состояния массива
 					function displayArray(arr) {
-						let resultDiv = document.getElementById('#result1');
+						let resultDiv = document.querySelector('#result1');
 						resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
 						document.querySelector('#result1').innerHTML = katex.renderToString(result);
 					}
-					
 
+
+
+					// умножение матриц
+					function  multiplyMatrices() {
+						const matrixA = parseMatrix(document.querySelector('#input3').value);
+						const matrixB = parseMatrix(document.querySelector('#input4').value);
+
+						if (matrixA[0].length !== matrixB.length) {
+							console.log("Матрицы должны иметь допустимые размеры для умножения.");
+						}
+
+						console.log('matrixA', matrixA);
+						console.log('matrixB', matrixB);
+
+						document.querySelector('#result2').innerHTML = '';
+						for (let k = 0; k < matrixB[0].length; k++){
+							for (let i = 0; i < matrixA.length; i++){
+								let t = 0;
+								for (let j = 0; j < matrixB.length; j++){
+									t += matrixA[i][j]*matrixB[j][k];
+									//
+								}
+								document.querySelector('#result2').innerHTML += katex.renderToString(''+t+',');
+							}
+						}
+					}
+/*
+					// Функция для отображения текущего состояния массива
+					function displayArray(arr) {
+						let resultDiv = document.getElementById('#result2');
+						resultDiv.innerHTML += arr.join(', ') + '<br>'; // Добавляем текущее состояние массива
+						document.querySelector('#result2').innerHTML = katex.renderToString(result);
+					}
+*/
+					// подключение кнопок
 					window.onload = () => {
 						document.querySelector('#calc1').onclick = addMatrices;
+						document.querySelector('#calc2').onclick = multiplyMatrices;
 
 					}
+
+				</script>
+				</script>
+				<section>
+					<h2>Исходный код</h2>
+					<img src="pic1.png" height="600px" data-menu-title="Исходный код">
+				</section>
+				<section>
+					<h2>Исходный код</h2>
+					<img src="dist\pic2.png" height="600px" data-menu-title="Исходный код">
+				</section>
+				<section>
+					
+					<textarea id="input3" cols="10" rows="10"></textarea>
+					<textarea id="input4" cols="10" rows="10"></textarea>
+					<p><button id="calc2">Умножить</button></p>
+					<div id="result2" style="margin-top: 10px;"></div>
+					<!-- document.querySelector('#result1').innerHTML = katex.renderToString('x^2') -->
+
+
+				</section>
+		
+
+
+				<section>
+					<h2>Мем 1</h2>
+					<img src="dist\img1.jpg" height="600px" data-menu-title="Мем1">
+				</section>
+				<section>
+					<h2>Мем 2</h2>
+					<img src="dist\img2.jpeg" height="600px" data-menu-title="Мем2">
+				</section>
+				<section>
+					<h2>Мем 3</h2>
+					<img src="dist\img3.jpg" height="600px" data-menu-title="Мем3">
+				</section>
+				<section class="center" data-menu-title="Заключение">
+					Спасибо за внимание!
+				</section>
+			</div>
+		</div>
+
 				</script>
 				</script>
 				<section>
